@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 4000;
 const server = express();
 
 // server.use('*', cors({ origin: 'http://localhost:3000' }));
-server.use('*', cors({ origin: 'https://dixonapp.herokuapp.com' }));
+server.use('*', cors());
 
 server.use('/graphql', bodyParser.json(), graphqlExpress({
   schema
