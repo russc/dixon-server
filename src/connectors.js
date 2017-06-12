@@ -1,16 +1,11 @@
 import Sequelize from 'sequelize';
 
-// // create the connection
-const sequelize = new Sequelize('dixon', "root", null, {
-  host: 'localhost',
-  dialect: 'mysql'
-});
 
 // create the connection
-// const sequelize = new Sequelize('heroku_9c23f8b82e19144', 'bd5ae23cfc4713', 'caefc012', {
-//   host: 'us-cdbr-iron-east-03.cleardb.net',
-//   dialect: 'mysql'
-// });
+const sequelize = new Sequelize('heroku_9c23f8b82e19144', 'bd5ae23cfc4713', 'caefc012', {
+  host: 'us-cdbr-iron-east-03.cleardb.net',
+  dialect: 'mysql'
+});
 
 //define the models
 const ClientModel = sequelize.define('client', {
