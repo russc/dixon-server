@@ -8,10 +8,11 @@ import cors from 'cors';
 
 import { schema } from './src/schema';
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const server = express();
 
-server.use('*', cors({ origin: 'http://localhost:3000' }));
+// server.use('*', cors({ origin: 'http://localhost:3000' }));
+server.use('*', cors({ origin: 'https://dixonapp.herokuapp.com' }));
 
 server.use('/graphql', bodyParser.json(), graphqlExpress({
   schema
