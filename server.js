@@ -11,7 +11,11 @@ import { schema } from './src/schema';
 const PORT = 4000;
 const server = express();
 
-server.use('*', cors({ origin: 'http://localhost:3000' }));
+// Development
+// server.use('*', cors({ origin: 'http://localhost:3000' }));
+// Staging
+server.use('*', cors({ origin: 'https://dixonapp.herokuapp.com' }));
+
 
 server.use('/graphql', bodyParser.json(), graphqlExpress({
   schema
@@ -22,5 +26,6 @@ server.use('/graphiql', graphiqlExpress({
 }));
 
 server.listen(PORT, () =>
-  console.log(`GraphQL Server is now running on http://localhost:${PORT}`)
+  // console.log(`GraphQL Server is now running on http://localhost:${PORT}`)
+  console.log(`GraphQL Server is now running on https://dixonapp.herokuapp.com:${PORT}`)
 );
